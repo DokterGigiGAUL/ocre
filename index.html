@@ -274,6 +274,42 @@
             display: none;
         }
 
+         .user-type-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .user-type-btn {
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .user-type-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .user-type-btn.active {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .user-type-btn .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .user-type-btn .label {
+            font-weight: 600;
+            color: #1e293b;
+        }
         @media (max-width: 640px) {
             .user-type-selector {
                 grid-template-columns: 1fr;
@@ -296,6 +332,7 @@
             <div class="rounded-t-2xl bg-white pt-4">
                 <img src="https://live.staticflickr.com/65535/55080957875_2e6dbc2931_b.jpg">
             </div>
+            
             <div class="rounded-b-2xl p-4 mb-4 bg-white">
                 <h1 class="text-center font-bold text-xl pb-1">OCRE- Oral Cancer Risk Evaluator</h1>
                 <p class="text-center text-base">Evaluasi dan Deteksi Dini Kanker Mulut</p>
@@ -304,17 +341,17 @@
                 </div>
        
             <!-- User Type Selection -->
-            <div id="userTypeSection">
-                <h2 class="my-4 text-color-black pt-4 border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
-                <div class="space-y-3">
-                    <div class="user-type-btn text-white rounded-xl text-center p-3 bg-sky-800 align-top" onclick="selectUserType('public')">
-                        <div class="label">👨‍💼 Masyarakat Umum  </div>
-                    </div>
-                    <div class="user-type-btn text-sky-800 rounded-xl text-center p-3 border-2 border-sky-700 align-top" onclick="selectUserType('professional')">
-                        <div class="label">👩🏻‍⚕️ Dokter Gigi</div>
+                <div id="userTypeSection">
+                    <h2 class="my-4 text-color-black pt-4 border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
+                    <div class="space-y-3">
+                        <div class="user-type-btn text-white rounded-xl text-center p-3 bg-sky-800 align-top" onclick="selectUserType('public')">
+                            <div class="label">👨‍💼 Masyarakat Umum</div>
+                        </div>
+                        <div class="user-type-btn text-sky-800 rounded-xl text-center p-3 border-2 border-sky-700 align-top" onclick="selectUserType('professional')">
+                            <div class="label">👩🏻‍⚕️ Dokter Gigi</div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 
             <!-- Demographic Information -->
@@ -360,6 +397,7 @@
                     <button class="rounded-xl bg-white flex-[50%] text-sky-800 border-2 border-sky-700 p-3 justify-start" id="prevBtn" onclick="previousQuestion()">Sebelumnya</button>
                     <button class="rounded-xl bg-sky-800 flex-[50%] p-3 flex-1 text-white" id="nextBtn justify-end" onclick="nextQuestion()">Selanjutnya</button>
                 </div>
+              </div>
 
             <!-- Results Section -->
             <div id="resultSection" class="result-section">
@@ -386,8 +424,6 @@
                     <button class="btn btn-primary" onclick="printResult()">Cetak Hasil</button>
                 </div>                
             </div>
-                              </div> 
-
             </div> 
     </div>
 
