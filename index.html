@@ -65,20 +65,20 @@
             display: flex;
             align-items: center;
             padding: 16px;
-            border: 2px solid #e2e8f0;
+            border: 2px solid #e1e1e1;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.2s;
         }
 
         .option:hover {
-            border-color: #cbd5e1;
-            background: #f8fafc;
+            border-color: #c3c3c3;
+            background: #f0f0f0;
         }
 
         .option.selected {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: #075985;
+            background: #f0f0f0;
         }
 
         .option input {
@@ -91,7 +91,7 @@
         .option label {
             cursor: pointer;
             flex: 1;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .input-group {
@@ -307,7 +307,7 @@
             <!-- User Type Selection -->
             <div id="userTypeSection">
                 
-                <h2 class="my-4 text-color-black border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
+                <h2 class="my-4 text-color-black pt-4 border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
                 <div class="space-y-3">
                     <div class="user-type-btn text-white rounded-xl text-center p-3 bg-sky-800 align-top" onclick="selectUserType('public')">
                         <div class="label">👨‍💼 Masyarakat Umum  </div>
@@ -343,8 +343,8 @@
                 </div>
                 
                 <div class="flex flex-row gap-4">
-                    <button class="rounded-xl bg-white text-sky-800 border-2 border-sky-700 p-4" onclick="goToUserType()">Kembali</button>
-                    <button class="rounded-xl bg-sky-800 p-4 flex-1 text-white" onclick="startQuestionnaire()">Mulai Evaluasi</button>
+                    <button class="rounded-xl flex-[40%] bg-white text-sky-800 border-2 border-sky-700 p-3" onclick="goToUserType()">Kembali</button>
+                    <button class="rounded-xl bg-sky-800 p-3 flex-[60%] text-white" onclick="startQuestionnaire()">Mulai Evaluasi</button>
                 </div>
               </div>
             </div>
@@ -358,9 +358,9 @@
                 
                 <div id="questionContainer"></div>
                 
-                <div class="btn-group">
-                    <button class="btn btn-secondary" id="prevBtn" onclick="previousQuestion()">Sebelumnya</button>
-                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Selanjutnya</button>
+                <div class="flex flex-row gap-4">
+                    <button class="rounded-xl bg-white flex-[50%] text-sky-800 border-2 border-sky-700 p-3 justify-start" id="prevBtn" onclick="previousQuestion()">Sebelumnya</button>
+                    <button class="rounded-xl bg-sky-800 flex-[50%] p-3 flex-1 text-white" id="nextBtn justify-end" onclick="nextQuestion()">Selanjutnya</button>
                 </div>
             </div>
 
@@ -407,26 +407,26 @@
                 {
                     id: 'tobacco',
                     title: 'Apakah Anda menggunakan produk tembakau?',
-                    description: 'Termasuk rokok, rokok kretek, cerutu, tembakau kunyah, atau sirih',
+                    description: 'Termasuk rokok, rokok kretek, cerutu, tembakau kunyah, atau vape',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak pernah', weight: 0 },
-                        { value: 1, label: 'Pernah (sudah berhenti)', weight: 2 },
-                        { value: 2, label: 'Ya, kadang-kadang', weight: 4 },
-                        { value: 3, label: 'Ya, setiap hari', weight: 6 }
+                        { value: 0, label: 'Ya, setiap hari', weight: 6 },
+                        { value: 1, label: 'Ya, kadang-kadang', weight: 4 },
+                        { value: 2, label: 'Pernah (sudah berhenti)', weight: 2 },
+                        { value: 3, label: 'Tidak pernah', weight: 0 }
                     ]
                 },
                 {
                     id: 'tobacco_duration',
                     title: 'Jika ya, berapa lama Anda menggunakan tembakau?',
-                    description: 'Durasi penggunaan meningkatkan risiko',
+                    description: 'Termasuk jika pernah menggunakan',
                     type: 'radio',
                     condition: (answers) => answers.tobacco > 0,
                     options: [
-                        { value: 0, label: 'Kurang dari 5 tahun', weight: 1 },
-                        { value: 1, label: '5-10 tahun', weight: 2 },
-                        { value: 2, label: '10-20 tahun', weight: 3 },
-                        { value: 3, label: 'Lebih dari 20 tahun', weight: 5 }
+                        { value: 0, label: 'Lebih dari 20 tahun', weight: 5 },
+                        { value: 1, label: '10-20 tahun', weight: 3 },
+                        { value: 2, label: '5-10 tahun', weight: 2 },
+                        { value: 3, label: 'Kurang dari 5 tahun', weight: 1  }
                     ]
                 },
                 {
@@ -569,9 +569,9 @@
                     type: 'radio',
                     options: [
                         { value: 0, label: 'Tidak pernah', weight: 0 },
-                        { value: 1, label: 'Ringan (<1 drink/hari)', weight: 1 },
-                        { value: 2, label: 'Sedang (1-2 drinks/hari)', weight: 3 },
-                        { value: 3, label: 'Berat (>2 drinks/hari)', weight: 5 }
+                        { value: 1, label: 'Ringan (<2 gelas/hari)', weight: 1 },
+                        { value: 2, label: 'Sedang (2-3 gelas/hari)', weight: 3 },
+                        { value: 3, label: 'Berat (>3 gelas/hari)', weight: 5 }
                     ]
                 },
                 {
