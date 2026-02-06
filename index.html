@@ -7,6 +7,7 @@
     <meta name="description" content="Aplikasi skrining deteksi dini lesi pre-kanker dan kanker mulut">
     <link rel="manifest" href="#" />
     <meta name="theme-color" content="#2563eb"/>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -326,7 +327,7 @@
                     <div class="h-full transition-width duration-0.3s bg-sky-800" style="width: 10%"></div>
                 </div>
                 
-                <h2 style="margin-bottom: 24px; color: #1e293b;">Informasi Dasar</h2>
+                <h2 style="margin-bottom: 24px; color: #1e293b;" class="font-sans font-extrabold">Informasi Dasar</h2>
                 
                 <div class="input-group">
                     <label>Usia</label>
@@ -1074,6 +1075,19 @@
                 });
             });
         }
+
+        const defaultTheme = require('tailwindcss/defaultTheme')
+
+module.exports = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+}
+
     </script>
 </body>
 </html>
