@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skrining Kanker Mulut - Deteksi Dini</title>
-    <meta name="description" content="Aplikasi skrining deteksi dini lesi pre-kanker dan kanker mulut">
+    <title>Oral Cancer Risk Evaluator</title>
+    <meta name="description" content="Aplikasi skrining evaluasi resiko kanker mulut">
     <link rel="manifest" href="#" />
-    <meta name="theme-color" content="#2563eb"/>
+    <meta name="theme-color" content="#075985"/>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -297,7 +297,7 @@
                 <img src="https://live.staticflickr.com/65535/55080957875_2e6dbc2931_b.jpg">
                 </div>
                 <div class="rounded-b-2xl p-4 mb-4 bg-white">
-                <h1 class="text-center font-bold text-2xl pb-1">OCRE- Oral Cancer Risk Evaluator</h1>
+                <h1 class="text-center font-bold text-xl pb-1">OCRE- Oral Cancer Risk Evaluator</h1>
                 <p class="text-center text-base">Evaluasi dan Deteksi Dini Kanker Mulut</p>
                 <div class="bg-yellow-100 p-2 text-black mt-4 text-sm">
                 <em>Penting:</em> Aplikasi ini adalah alat skrining, bukan untuk diagnosis. Hasil akhir harus dikonsultasikan dengan dokter gigi spesialis penyakit mulut.
@@ -307,7 +307,7 @@
             <!-- User Type Selection -->
             <div id="userTypeSection">
                 
-                <h2 class="my-4 text-color-black";">Pilih Tipe Pengguna</h2>
+                <h2 class="my-4 text-color-black border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
                 <div class="space-y-3">
                     <div class="user-type-btn text-white rounded-xl text-center p-3 bg-sky-800 align-top" onclick="selectUserType('public')">
                         <div class="label">👨‍💼 Masyarakat Umum  </div>
@@ -328,12 +328,12 @@
                 
                 <h2 style="margin-bottom: 24px; color: #1e293b;" class="text-2xl font-sans font-bold">Informasi Dasar</h2>
                 
-                <div class="input-group text-lg">
+                <div class="input-group text-base">
                     <label>Usia</label>
                     <input type="number" id="age" min="1" max="120" placeholder="Masukkan usia">
                 </div>
                 
-                <div class="input-group text-lg">
+                <div class="input-group text-base">
                     <label>Jenis Kelamin</label>
                     <select id="gender">
                         <option value="">Pilih jenis kelamin</option>
@@ -342,7 +342,7 @@
                     </select>
                 </div>
                 
-                <div class="flex flex-row">
+                <div class="flex flex-row gap-4">
                     <button class="rounded-2xl bg-white border-2 border-sky-700 p-4" onclick="goToUserType()">Kembali</button>
                     <button class="rounded-2xl bg-sky-800 p-4 flex-1 text-white" onclick="startQuestionnaire()">Mulai Evaluasi</button>
                 </div>
