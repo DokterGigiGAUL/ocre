@@ -474,7 +474,7 @@
                     id: 'lesion_location',
                     title: 'Lokasi sariawan/ luka (jika ada)',
                     type: 'radio',
-                    condition: (answers) => answers.oral_lesion > p,
+                    condition: (answers) => answers.oral_lesion > 0,
                     options: [
                         { value: 0, label: 'Tidak ada lesi', weight: 0 },
                         { value: 1, label: 'Mukosa bukal/bibir', weight: 2 },
