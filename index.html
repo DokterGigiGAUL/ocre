@@ -401,29 +401,32 @@
             </div>
             <!-- Results Section -->
             <div id="resultSection" class="result-section">
-                <h2 style="margin-bottom: 24px; color: #1e293b;">Hasil Skrining</h2>
+                <div class="rounded-3xl bg-white p-4">
+                    <h2 style="margin-bottom: 24px; color: #1e293b;">Hasil Skrining</h2>
                 
-                <div id="riskIndicator" class="risk-indicator">
-                    <div class="risk-level"></div>
-                    <div class="risk-description"></div>
+                    <div id="riskIndicator" class="risk-indicator">
+                        <div class="risk-level"></div>
+                        <div class="risk-description"></div>
+                    </div>
+                
+                    <div class="score-breakdown">
+                        <h3 style="margin-bottom: 16px; color: #1e293b;">Detail Penilaian</h3>
+                        <div id="scoreDetails"></div>
+                    </div>
+                
+                    <div id="recommendations"></div>
+                
+                    <div class="alert alert-warning">
+                        <strong>Disclaimer:</strong> Hasil skrining ini bukan diagnosis medis. Konsultasikan dengan dokter gigi atau spesialis untuk pemeriksaan lebih lanjut.
+                    </div>
+                
+                    <div class="btn-group">
+                        <button class="btn btn-secondary" onclick="restartScreening()">Skrining Baru</button>
+                        <button class="btn btn-primary" onclick="printResult()">Cetak Hasil</button>
+                    </div>                
                 </div>
-                
-                <div class="score-breakdown">
-                    <h3 style="margin-bottom: 16px; color: #1e293b;">Detail Penilaian</h3>
-                    <div id="scoreDetails"></div>
-                </div>
-                
-                <div id="recommendations"></div>
-                
-                <div class="alert alert-warning">
-                    <strong>Disclaimer:</strong> Hasil skrining ini bukan diagnosis medis. Konsultasikan dengan dokter gigi atau spesialis untuk pemeriksaan lebih lanjut.
-                </div>
-                
-                <div class="btn-group">
-                    <button class="btn btn-secondary" onclick="restartScreening()">Skrining Baru</button>
-                    <button class="btn btn-primary" onclick="printResult()">Cetak Hasil</button>
-                </div>                
-            </div>   
+            </div>
+        </div>
     </div>
 
     <script>
