@@ -703,11 +703,12 @@
             ]
         };
 
-        function selectUserType(type) {
+      
+    function selectUserType(type) {
             state.userType = type;
             document.querySelectorAll('.user-type-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.closest('.user-type-btn').classList.add('active'); 
-
+            event.target.closest('.user-type-btn').classList.add('active');
+            
             setTimeout(() => {
                 document.getElementById('userTypeSection').style.display = 'none';
                 document.getElementById('demographicSection').classList.add('active');
@@ -764,7 +765,7 @@
             });
         }
         
-        function startQuestionnaire() {
+        async function startQuestionnaire() {
             const age = document.getElementById('age').value;
             const gender = document.getElementById('gender').value;
             
@@ -775,19 +776,20 @@
             
             state.answers.age = parseInt(age);
             state.answers.gender = gender;
-
-                    // Handle photo upload if file selected
+            
+            // Handle photo upload if file selected
             const photoFile = document.getElementById('photoUpload').files[0];
             if (photoFile) {
                 const uploaded = await uploadPhotoToGoogleDrive(photoFile);
                 // Continue even if upload fails
             }
+            
             // Age is a risk factor for oral cancer (>40 years)
             if (state.answers.age > 40) {
                 state.score += 2;
             }
             if (state.answers.age > 60) {
-                state.score += 3;
+                state.score += 2;
             }
             
             // Male gender has higher risk
