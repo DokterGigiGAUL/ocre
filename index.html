@@ -305,8 +305,8 @@
             <div class="rounded-b-2xl p-4 mb-4 bg-white">
                 <h1 class="text-center font-bold text-xl pb-1">OCRE- Oral Cancer Risk Evaluator</h1>
                 <p class="text-center text-base">Evaluasi dan Deteksi Dini Kanker Mulut</p>
-                <div class="bg-gray-100 rounded-lg border-4 border-black p-2 text-black mt-4 text-sm">
-                  <em>Penting:</em> Aplikasi ini adalah alat skrining, bukan untuk diagnosis. Hasil akhir harus dikonsultasikan dengan dokter gigi spesialis penyakit mulut.
+                <div class="bg-gray-200/80 rounded-lg border-4 border-black p-2 text-black mt-4 text-sm">
+                  <em>Penting:</em> Aplikasi ini adalah <strong>alat skrining</strong> bukan untuk kepastian diagnosis. Hasil akhir ditentukan setelah berkonsultasi dengan dokter gigi spesialis penyakit mulut.
                 </div>
        
             <!-- User Type Selection -->
@@ -345,7 +345,16 @@
                         <option value="female">Perempuan</option>
                     </select>
                 </div>
-                
+<!-- upload foto dokumentasi -->
+                  <div class="input-group">
+                    <label>Foto Lesi Mulut (Opsional)</label>
+                    <input type="file" id="photoUpload" accept="image/*" capture="environment">
+                    <p style="font-size: 13px; color: #64748b; margin-top: 8px;">
+                        Foto akan disimpan untuk dokumentasi dan membantu pengmbangan pelatihan AI (<em>AI training</em>)untuk pengenalan dan penilaian  kanker mulut melalui foto. Tidak wajib diisi.
+                    </p>
+                    <div id="uploadStatus" style="margin-top: 8px; font-size: 14px;"></div>
+                </div>
+                  
                 <div class="flex flex-row gap-4">
                     <button class="rounded-xl flex-[40%] bg-white text-sky-800 border-2 border-sky-700 p-3" onclick="goToUserType()">Kembali</button>
                     <button class="rounded-xl bg-sky-800 p-3 flex-[60%] text-white" onclick="startQuestionnaire()">Mulai Evaluasi</button>
@@ -1108,6 +1117,12 @@ module.exports = {
   },
 }
 
+        // Handle photo upload if file selected
+            const photoFile = document.getElementById('photoUpload').files[0];
+            if (photoFile) {
+                const uploaded = await uploadPhotoToGoogleDrive(photoFile);
+                // Continue even if upload fails
+            }
     </script>
 </body>
 </html>
