@@ -324,7 +324,6 @@
                         </div>                 
                     </div>
                 </div>
-            </div>    
 
             <!-- Demographic Information -->
             <div id="demographicSection" class="question-section">
@@ -408,14 +407,21 @@
         </div>
     </div>
 
+    <!-- jsPDF Library for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
     <script>
         // Application state
         let state = {
             userType: null,
             currentQuestion: 0,
             answers: {},
-            score: 0
+            score: 0,
+            uploadedPhotoUrl: null
         };
+
+        // Google Apps Script Web App URL - GANTI DENGAN URL ANDA
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbydG02RvuDardND4eouc6274Ch0qTBoiFKiVRVt6y9Pf5ZAIWZoBSy-x6h_k1qGN0HhgA/exec';
 
         // Questions database based on oral cancer risk factors
         const questions = {
@@ -739,7 +745,7 @@
                 formData.append('age', state.answers.age || '');
                 formData.append('gender', state.answers.gender || '');
                 
-                const response = await fetch(https://script.google.com/macros/s/AKfycbydG02RvuDardND4eouc6274Ch0qTBoiFKiVRVt6y9Pf5ZAIWZoBSy-x6h_k1qGN0HhgA/exec, {
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     body: formData
                 });
