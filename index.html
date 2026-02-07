@@ -258,22 +258,22 @@
             transition: all 0.3s;
             text-align: center;
         }
-
+/*
         .user-type-btn:hover {
             border-color: #667eea;
             transform: translateY(-2px);
         }
-
+*/
         .user-type-btn.active {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: #075985;
+            background: #f0f0f0;
         }
-
+/*
         .user-type-btn .icon {
             font-size: 32px;
             margin-bottom: 8px;
         }
-
+*/
         .user-type-btn .label {
             font-weight: 600;
             color: #1e293b;
@@ -325,12 +325,11 @@
 
             <!-- Demographic Information -->
             <div id="demographicSection" class="question-section">
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 10%"></div>
-                </div>
-                
+              <div class="rounded-3xl bg-white p-4">
+                    <div class="w-100% h-3 bg-gray-200 rounded-full mb-6 overflow-hidden">
+                      <div class="h-full transition-width duration-0.3s bg-sky-800" id="questionProgress" style="width: 10%"></div>
+                    </div>
                 <h2 style="margin-bottom: 24px; color: #1e293b;">Informasi Dasar</h2>
-                
                 <div class="input-group">
                     <label>Usia</label>
                     <input type="number" id="age" min="1" max="120" placeholder="Masukkan usia">
@@ -358,6 +357,7 @@
                     <button class="btn btn-secondary" onclick="goToUserType()">Kembali</button>
                     <button class="btn btn-primary" onclick="startQuestionnaire()">Mulai Skrining</button>
                 </div>
+              </div>
             </div>
 
             <!-- Questionnaire Section -->
