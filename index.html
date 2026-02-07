@@ -296,31 +296,34 @@
 <body>
     <div class="font-sans">
         <div class="max-w-lg mx-auto">
-            <!-- <div class="w-80 h-80 bg-white border-xl flex align-center justify-center mx-4 text-3xl"> -->
+            
             <div class="relative rounded-t-2xl bg-white">
                 <img src="https://live.staticflickr.com/65535/55080957875_2e6dbc2931_b.jpg" class="rounded-t-2xl">
-                <img src="Logo transparent.png" class="absolute top-4 left-4 h-16 w-auto">
+                <img src="Logo transparent.png" class="absolute top-4 left-4 h-12 w-auto">
             </div>
             
             <div class="rounded-b-2xl p-4 mb-4 bg-white">
                 <h1 class="text-center font-bold text-xl pb-1">OCRE- Oral Cancer Risk Evaluator</h1>
                 <p class="text-center text-base">Evaluasi dan Deteksi Dini Kanker Mulut</p>
-                  <div class="bg-gray-200/80 rounded-lg border-4 border-black p-2 text-black mt-4 text-sm">
+                  <div class="bg-gray-200/80 rounded-lg border-2 border-black p-2 text-black mt-4 text-sm">
                     <em>Penting:</em> Aplikasi ini adalah <strong>alat skrining</strong> bukan untuk kepastian diagnosis. Hasil akhir ditentukan setelah berkonsultasi dengan dokter gigi spesialis penyakit mulut.
                   </div>
+            </div>
 
                  <!-- User Type Selection -->
-                 <div id="userTypeSection">
-                    <h2 class="my-4 text-color-black pt-4 border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
-                    <div class="user-type-selector space-y-3">
-                      <div class="user-type-btn rounded-xl text-center p-3 bg-sky-800" onclick="selectUserType('public')">
-                         <div class="label" style="color:white;">👨‍💼 Masyarakat Umum</div>
-                      </div>           
-                      <div class="user-type-btn text-sky-800 rounded-xl text-center p-3 border-2 border-sky-700" onclick="selectUserType('professional')">
-                         <div class="label">👩🏻‍⚕️ Dokter Gigi</div>
-                      </div>                 
-                    </div>
-                 </div>
+            <div id="userTypeSection">
+                <h2 class="my-4 text-color-black pt-4 border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
+                <div class="user-type-selector space-y-3">
+                    <div class="user-type-btn rounded-xl text-center p-3 bg-sky-800" onclick="selectUserType('public')">
+                        <div class="label" style="color:white;">👨‍💼 Masyarakat Umum
+                        </div>
+                    </div>           
+                    <div class="user-type-btn text-sky-800 rounded-xl text-center p-3 border-2 border-sky-700" onclick="selectUserType('professional')">
+                         <div class="label">👩🏻‍⚕️ Dokter Gigi
+                         </div>
+                    </div>                 
+                </div>
+            </div>
                 
 
             <!-- Demographic Information -->
