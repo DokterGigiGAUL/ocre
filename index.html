@@ -312,7 +312,7 @@
                 <!-- User Type Selection -->
                 <div id="userTypeSection">
                     <h2 class="my-4 text-color-black pt-4 border-t border-gray-400/60";">Pilih Tipe Pengguna</h2>
-                    <div class="space-y-3">
+                    <div class="user-type-selector space-y-3">
                         <div class="user-type-btn rounded-xl text-center p-3 bg-sky-800" onclick="selectUserType('public')">
                             <div class="label" style="color:white;">👨‍💼 Masyarakat Umum</div>
                         </div>
@@ -358,46 +358,6 @@
                     <button class="btn btn-primary" onclick="startQuestionnaire()">Mulai Skrining</button>
                 </div>
             </div>
-           
-
-            <!-- Demographic Information 
-            <div id="demographicSection" class="question-section">
-              <div class="rounded-3xl bg-white p-4">
-                <div class="w-100% h-3 bg-gray-200 rounded-full mb-6 overflow-hidden">
-                    <div class="h-full transition-width duration-0.3s bg-sky-800" style="width: 10%"></div>
-                </div>
-                
-                <h2 style="margin-bottom: 24px; color: #1e293b;" class="text-2xl font-sans font-bold">Informasi Dasar</h2>
-                
-                <div class="input-group text-base">
-                    <label>Usia</label>
-                    <input type="number" id="age" min="1" max="120" placeholder="Masukkan usia">
-                </div>
-                
-                <div class="input-group text-base">
-                    <label>Jenis Kelamin</label>
-                    <select id="gender">
-                        <option value="">Pilih jenis kelamin</option>
-                        <option value="male">Laki-laki</option>
-                        <option value="female">Perempuan</option>
-                    </select>
-                </div>
-                  
-                  <div class="input-group text-base">
-                    <label>Foto Lesi Mulut (Opsional)</label>
-                    <input type="file" id="photoUpload" accept="image/*" capture="environment">
-                    <p style="font-size: 13px; color: #64748b; margin-top: 8px;">
-                        Foto akan disimpan untuk dokumentasi dan membantu pengembangan pelatihan AI (AI training)untuk pengenalan dan penilaian  kanker mulut melalui foto. Tidak wajib diisi.
-                    </p>
-                    <div id="uploadStatus" style="margin-top: 8px; font-size: 14px;"></div>
-                  </div>
-                  
-                <div class="flex flex-row gap-4">
-                    <button class="rounded-xl flex-[40%] bg-white text-sky-800 border-2 border-sky-700 p-3" onclick="goToUserType()">Kembali</button>
-                    <button class="rounded-xl bg-sky-800 p-3 flex-[60%] text-white" onclick="startQuestionnaire()">Mulai Evaluasi</button>
-                </div>
-              </div>
-            </div>-->
 
             <!-- Questionnaire Section -->
             <div id="questionnaireSection" class="question-section">
