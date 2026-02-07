@@ -345,22 +345,23 @@
                         <option value="female">Perempuan</option>
                     </select>
                 </div>
+                  
 <!-- upload foto dokumentasi -->
-                  <div class="input-group">
+                  <div class="input-group text-base">
                     <label>Foto Lesi Mulut (Opsional)</label>
                     <input type="file" id="photoUpload" accept="image/*" capture="environment">
                     <p style="font-size: 13px; color: #64748b; margin-top: 8px;">
                         Foto akan disimpan untuk dokumentasi dan membantu pengmbangan pelatihan AI (<em>AI training</em>)untuk pengenalan dan penilaian  kanker mulut melalui foto. Tidak wajib diisi.
                     </p>
                     <div id="uploadStatus" style="margin-top: 8px; font-size: 14px;"></div>
-                </div>
+                  </div>
                   
                 <div class="flex flex-row gap-4">
                     <button class="rounded-xl flex-[40%] bg-white text-sky-800 border-2 border-sky-700 p-3" onclick="goToUserType()">Kembali</button>
                     <button class="rounded-xl bg-sky-800 p-3 flex-[60%] text-white" onclick="startQuestionnaire()">Mulai Evaluasi</button>
                 </div>
               </div>
-            </div>
+            <!--</div>-->
 
             <!-- Questionnaire Section -->
             <div id="questionnaireSection" class="question-section">
