@@ -82,7 +82,8 @@
                 <h1 class="text-center font-bold text-xl pb-1">OCRE- Oral Cancer Risk Evaluator</h1>
                 <p class="text-center text-base">Evaluasi dan Deteksi Dini Kanker Mulut</p>
                   <div class="text-black mt-4 text-sm">
-                    <em>DISCLAIMER:</em> Aplikasi ini adalah <strong>alat skrining</strong> dan <strong><span class="text-rose-600">BUKAN</span></strong> untuk <strong>kepastian diagnosis</strong>. Hasil akhir ditentukan setelah berkonsultasi dengan <strong>dokter gigi spesialis penyakit mulut</strong>.
+                    <em>DISCLAIMER:</em> Aplikasi ini adalah <strong>alat skrining resiko kanker mulut</strong> dan <strong><span class="text-rose-600">BUKAN</span></strong> untuk kepastian diagnosis 
+                      . Hasil akhir didapat pasti dengan berkonsultasi ke <strong>dokter gigi spesialis penyakit mulut</strong>.
                   </div>
             
 
@@ -538,7 +539,7 @@
                 
                 if (result.success) {
                     state.uploadedPhotoUrl = result.fileUrl;
-                    statusDiv.innerHTML = '<span style="color: #10b981;">✓ Foto berhasil diupload</span>';
+                    statusDiv.innerHTML = '<span style="color: #10b981;">✓ Foto berhasil diupload. Terimakasih.</span>';
                     return true;
                 } else {
                     throw new Error(result.error || 'Upload failed');
@@ -843,7 +844,7 @@
                         <div class="recommendation border-2 border-white bg-amber-100 text-black">
                             <h3>⚠️ Rekomendasi</h3>
                             <ul>
-                                <li>• <strong>Konsultasikan dengan dokter gigi dalam 1-2 minggu</strong></li>
+                                <li>• <strong>Konsultasikan dengan dokter gigi spesialis penyakit mulut dalam 1-2 minggu</strong></li>
                                 <li>• Hentikan atau coba kurangi kebiasaan merokok/tembakau jika ada</li>
                                 <li>• Kurangi atau hentikan konsumsi alkohol jika ada </li>
                                 <li>• Jaga kebersihan mulut dengan menyikat gigi 2x sehari</li>
@@ -857,7 +858,7 @@
                         <div class="recommendation border-2 border-white bg-rose-100 text-black">
                             <h3>🚨 Rekomendasi </h3>
                             <ul>
-                                <li>• <strong>SEGERA konsultasi ke dokter gigi/spesialis penyakit mulut dalam 1-3 hari</strong></li>
+                                <li>• <strong>SEGERA konsultasi ke dokter gigi spesialis penyakit mulut dalam 1-3 hari</strong></li>
                                 <li>• Bawa hasil skrining ini saat konsultasi</li>
                                 <li>• Hentikan SEGERA penggunaan tembakau dan alkohol</li>
                                 <li>• Jangan tunda pemeriksaan medis, termasuk saran biopsi jika diperlukan</li>
@@ -901,7 +902,7 @@
                         <div class="recommendation">
                             <h3>Tindakan Klinis Mendesak</h3>
                             <ul>
-                                <li>• <strong>RUJUKAN SEGERA ke Spesialis Bedah Mulut/Onkologi</strong></li>
+                                <li>• <strong>RUJUKAN SEGERA ke Spesialis Penyakit Mulut/ Onkologi</strong></li>
                                 <li>• Biopsi incisional/excisional DIREKOMENDASIKAN</li>
                                 <li>• Pemeriksaan imaging (CT/MRI) jika ada indikasi</li>
                                 <li>• Follow-up maksimal 1-2 minggu</li>
@@ -910,7 +911,7 @@
                             </ul>
                         </div>
                         <div class="alert alert-warning">
-                            <strong>Catatan:</strong> Temuan klinis menunjukkan indikasi kuat untuk evaluasi lebih lanjut. Early detection significantly improves prognosis.
+                            <strong>Catatan:</strong> Temuan klinis menunjukkan indikasi kuat untuk evaluasi lebih lanjut. Deteksi dini meningkatkan prognosis.
                         </div>
                     `;
                 }
