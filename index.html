@@ -952,7 +952,17 @@
         }
 
         function exportToPDF() {
-            const { jsPDF } = window.jspdf;
+        const { jsPDF } = window.jspdf;
+    
+        // Hitung tinggi konten dinamis
+        const contentHeight = calculateContentHeight();
+    
+        // Buat PDF dengan tinggi custom (1 halaman penuh)
+        const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: [210, contentHeight] // width 210mm (A4), height dinamis
+        });
             const doc = new jsPDF();
             
             let y = 20;
@@ -1179,7 +1189,14 @@
             installButton.style.display = 'none';
             deferredPrompt = null;
         });
-
+function calculateContentHeight() {
+    // Estimasi tinggi berdasarkan jumlah rekomendasi
+    const baseHeight = 150; // header + info dasar
+    const recommendationCount = document.querySelectorAll('#recommendations li').length;
+    const recommendationHeight = recommendationCount * 10;
+    
+    return baseHeight + recommendationHeight + 50; // +50 untuk margin
+}
     </script>
 </body>
 </html>
