@@ -251,10 +251,10 @@
                     description: 'Kebiasaan menyirih adalah faktor risiko signifikan',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak pernah', weight: 0 },
-                        { value: 1, label: 'Pernah (sudah berhenti)', weight: 2 },
-                        { value: 2, label: 'Ya, kadang-kadang', weight: 4 },
-                        { value: 3, label: 'Ya, rutin setiap hari', weight: 6 }
+                        { value: 0, label: 'Ya, rutin setiap hari', weight: 6 },
+                        { value: 1, label: 'Ya, kadang-kadang', weight: 4 },
+                        { value: 2, label: 'Pernah (sudah berhenti)', weight: 2},
+                        { value: 3, label: 'Tidak pernah', weight: 0 }
                     ]
                 },
                 {
@@ -263,22 +263,22 @@
                     description: 'Lesi yang tidak merespon terapi dari tenaga medis (dokter/ dokter gigi)',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
+                        { value: 0, label: 'Ada, sudah lebih dari 1 bulan', weight: 12 },
                         { value: 1, label: 'Ada, sudah lebih dari 2 minggu', weight: 8 },
-                        { value: 2, label: 'Ada, sudah lebih dari 1 bulan', weight: 12 }
+                        { value: 2, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
                     id: 'lesion_location',
                     title: 'Lokasi sariawan/ luka (jika ada)',
                     type: 'radio',
-                    condition: (answers) => answers.oral_lesion > 0,
+                    condition: (answers) => answers.oral_lesion < 2,
                     options: [
-                        { value: 0, label: 'Tidak ada lesi', weight: 0 },
-                        { value: 1, label: 'Mukosa bukal/bibir', weight: 2 },
-                        { value: 2, label: 'Lidah lateral/ventral', weight: 4 },
-                        { value: 3, label: 'Dasar mulut', weight: 5 },
-                        { value: 4, label: 'Soft palate/orofaring', weight: 4 }
+                        { value: 0, label: 'Dasar mulut', weight: 5 },
+                        { value: 1, label: 'Lidah lateral/ventral', weight: 4 },
+                        { value: 2, label: 'Palatum/ orofaring', weight: 4},
+                        { value: 3, label: 'Mukosa bukal/ labial', weight: 2},
+                        { value: 4, label: 'Gingiva', weight: 1 }
                     ]
                 },
                 {
@@ -288,44 +288,43 @@
                     type: 'radio',
                     condition: (answers) => answers.oral_lesion === 0,
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
-                        { value: 1, label: 'Ada bercak putih', weight: 6 },
-                        { value: 2, label: 'Ada bercak merah', weight: 8 },
-                        { value: 3, label: 'Ada bercak putih dan merah', weight: 10 }
+                        { value: 0, label: 'Ada bercak putih dan merah', weight: 10 },
+                        { value: 1, label: 'Ada bercak merah', weight: 8 },
+                        { value: 2, label: 'Ada bercak putih', weight: 6 },
+                        { value: 3, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
                     id: 'swelling',
                     title: 'Apakah ada pembengkakan atau benjolan di mulut/leher?',
-                    description: 'Pembengkakan yang persisten perlu dievaluasi',
                     type: 'radio',
                     condition: (answers) => answers.white_red_patch === 0,
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
+                        { value: 0, label: 'Ada keduanya', weight: 10 },
                         { value: 1, label: 'Ada pembengkakan di mulut', weight: 7 },
                         { value: 2, label: 'Ada benjolan di leher', weight: 7 },
-                        { value: 3, label: 'Ada keduanya', weight: 10 }
+                        { value: 3, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
                     id: 'pain',
                     title: 'Apakah Anda merasakan nyeri persisten di mulut atau tenggorokan?',
-                    description: 'Nyeri yang tidak jelas penyebabnya dan tidak hilang',
+                    description: 'Nyeri yang tidak hilang dalam waktu > 3 minggu',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
+                        { value: 0, label: 'Sering terasa nyeri', weight: 6 },
                         { value: 1, label: 'Kadang-kadang', weight: 3 },
-                        { value: 2, label: 'Sering terasa nyeri', weight: 6 }
+                        { value: 2, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
                     id: 'difficulty',
-                    title: 'Apakah Anda mengalami kesulitan menelan atau mengunyah?',
+                    title: 'Apakah Anda mengalami kesulitan/ sakit menelan atau mengunyah?',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada kesulitan', weight: 0 },
-                        { value: 1, label: 'Kadang-kadang sulit', weight: 5 },
-                        { value: 2, label: 'Sering sulit menelan/mengunyah', weight: 8 }
+                        { value: 0, label: 'Sering', weight: 8 },
+                        { value: 1, label: 'Kadang-kadang', weight: 5 },
+                        { value: 2, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
@@ -333,9 +332,9 @@
                     title: 'Apakah ada rasa kebas/mati rasa di mulut atau bibir?',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
-                        { value: 1, label: 'Ya, kadang-kadang', weight: 4 },
-                        { value: 2, label: 'Ya, persisten', weight: 7 }
+                        { value: 0, label: 'Ya', weight: 7 },
+                        { value: 1, label: 'Kadang-kadang', weight: 4 },
+                        { value: 2, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
@@ -344,18 +343,19 @@
                     description: 'Kebersihan mulut yang buruk meningkatkan risiko',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Baik, rutin ke dokter gigi', weight: 0 },
+                        { value: 0, label: 'Buruk, banyak gigi rusak/hilang', weight: 4 },
                         { value: 1, label: 'Cukup, jarang ke dokter gigi', weight: 2 },
-                        { value: 2, label: 'Buruk, banyak gigi rusak/hilang', weight: 4 }
+                        { value: 2, label: 'Baik, rutin ke dokter gigi', weight: 0 }
                     ]
                 },
                 {
                     id: 'family_history',
-                    title: 'Apakah ada riwayat kanker mulut/kepala-leher dalam keluarga?',
+                    title: 'Apakah ada riwayat kanker, terutama mulut/ kepala-leher dalam keluarga?',
+                    description: '*Termasuk kanker lain seperti: kanker payudara, kanker usus, dll.',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
-                        { value: 1, label: 'Ya, ada', weight: 3 }
+                        { value: 0, label: 'Ya, ada', weight: 3 },
+                        { value: 1, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
@@ -364,61 +364,29 @@
                     description: '*Human Papilloma Virus',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak/Tidak tahu', weight: 0 },
-                        { value: 1, label: 'Ya', weight: 3 }
+                        { value: 0, label: 'Ya', weight: 3 },
+                        { value: 1, label: 'Tidak/Tidak tahu', weight: 0 }
                     ]
                 }
             ],
             professional: [
                 {
-                    id: 'tobacco',
-                    title: 'Riwayat penggunaan tembakau pasien',
-                    type: 'radio',
-                    options: [
-                        { value: 0, label: 'Tidak pernah', weight: 0 },
-                        { value: 1, label: 'Mantan perokok (>5 tahun berhenti)', weight: 2 },
-                        { value: 2, label: 'Mantan perokok (<5 tahun berhenti)', weight: 3 },
-                        { value: 3, label: 'Perokok aktif <10 tahun', weight: 5 },
-                        { value: 4, label: 'Perokok aktif >10 tahun', weight: 7 }
-                    ]
-                },
-                {
-                    id: 'alcohol',
-                    title: 'Konsumsi alkohol pasien',
-                    type: 'radio',
-                    options: [
-                        { value: 0, label: 'Tidak pernah', weight: 0 },
-                        { value: 1, label: 'Ringan (<2 gelas/hari)', weight: 1 },
-                        { value: 2, label: 'Sedang (2-3 gelas/hari)', weight: 3 },
-                        { value: 3, label: 'Berat (>3 gelas/hari)', weight: 5 }
-                    ]
-                },
-                {
-                    id: 'betel',
-                    title: 'Kebiasaan menyirih/pinang',
-                    type: 'radio',
-                    options: [
-                        { value: 0, label: 'Tidak ada riwayat', weight: 0 },
-                        { value: 1, label: 'Mantan pengguna', weight: 2 },
-                        { value: 2, label: 'Pengguna aktif', weight: 6 }
-                    ]
-                },
-                {
                     id: 'clinical_lesion',
                     title: 'Temuan klinis lesi pada pemeriksaan',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada lesi mencurigakan', weight: 0 },
+                        { value: 0, label: 'Lesi eritroleukoplakia', weight: 14 },
                         { value: 1, label: 'Ulkus non-healing (>2 minggu)', weight: 10 },
                         { value: 2, label: 'Leukoplakia homogen', weight: 6 },
                         { value: 3, label: 'Leukoplakia non-homogen', weight: 8 },
                         { value: 4, label: 'Eritroplakia', weight: 12 },
-                        { value: 5, label: 'Lesi eritroleukoplakia', weight: 14 }
+                        { value: 5, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
                     id: 'lesion_location',
-                    title: 'Lokasi lesi (jika ada)',
+                    title: 'Lokasi lesi',
+                    condition: (answers) => answers.oral_lesion < 4,
                     type: 'radio',
                     options: [
                         { value: 0, label: 'Tidak ada lesi', weight: 0 },
@@ -471,6 +439,39 @@
                         { value: 'numbness', label: 'Parestesia/kebas', weight: 4 },
                         { value: 'bleeding', label: 'Perdarahan spontan', weight: 5 },
                         { value: 'loose_teeth', label: 'Gigi goyang tanpa sebab', weight: 4 }
+                    ]
+                },
+                {
+                    id: 'tobacco',
+                    title: 'Riwayat penggunaan tembakau pasien',
+                    type: 'radio',
+                    options: [
+                        { value: 0, label: 'Perokok aktif >10 tahun', weight: 7 },
+                        { value: 1, label: 'Perokok aktif <10 tahun', weight: 5 },
+                        { value: 2, label: 'Mantan perokok (<5 tahun berhenti)', weight: 3 },
+                        { value: 3, label: 'Mantan perokok (>5 tahun berhenti)', weight: 2 },
+                        { value: 4, label: 'Tidak pernah', weight: 0 }
+                    ]
+                },
+                {
+                    id: 'alcohol',
+                    title: 'Konsumsi alkohol pasien',
+                    type: 'radio',
+                    options: [
+                        { value: 0, label: 'Berat (>3 gelas/hari)', weight: 5 },
+                        { value: 1, label: 'Sedang (2-3 gelas/hari)', weight: 3 },
+                        { value: 2, label: 'Ringan (<2 gelas/hari)', weight: 1 },
+                        { value: 3, label: 'Tidak pernah', weight: 0 }
+                    ]
+                },
+                {
+                    id: 'betel',
+                    title: 'Kebiasaan menyirih/ mengunyah pinang',
+                    type: 'radio',
+                    options: [
+                        { value: 0, label: 'Pengguna aktif', weight: 6 },
+                        { value: 1, label: 'Pernah, sudah berhenti', weight: 2 },
+                        { value: 2, label: 'Tidak ada riwayat', weight: 0 }
                     ]
                 },
                 {
