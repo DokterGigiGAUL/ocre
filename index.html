@@ -287,7 +287,7 @@
                     title: 'Apakah ada bercak putih atau merah di mulut Anda?',
                     description: 'Leukoplakia (putih) atau eritroplakia (merah) bisa menjadi tanda pre-kanker',
                     type: 'radio',
-                    condition: (answers) => answers.oral_lesion === 2 || answers.lesion_location > 4,
+                    condition: (answers) => answers.lesion_location > 4 || answers.oral_lesion === 2,
                     options: [
                         { value: 0, label: 'Ada bercak putih dan merah', weight: 10 },
                         { value: 1, label: 'Ada bercak merah', weight: 8 },
