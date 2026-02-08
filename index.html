@@ -1105,7 +1105,7 @@
             // Footer
             doc.setFontSize(8);
             doc.setTextColor(100, 100, 100);
-            doc.text('Aplikasi Evaluasi Resiko Kanker Mulut {OCRE) - Gigital (c)2026', pageWidth / 2, doc.internal.pageSize.getHeight() - 10, { align: 'center' });
+            doc.text('Aplikasi Evaluasi Resiko Kanker Mulut {OCRE) - Gigital (c)2026', pageWidth / 2, doc.internal.pageSize.getHeight() - 10 -20, { align: 'center' });
             
             // Save PDF
             const filename = `Hasil-Skrining-Kanker-Mulut-${state.answers.age}th-${new Date().toISOString().split('T')[0]}.pdf`;
