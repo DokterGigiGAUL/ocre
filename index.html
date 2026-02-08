@@ -222,8 +222,8 @@
                 },
                 {
                     id: 'tobacco_duration',
-                    title: 'Jika ya, berapa lama Anda menggunakan tembakau?',
-                    description: 'Termasuk jika pernah menggunakan',
+                    title: 'Berapa lama Anda menggunakan produk tembakau?',
+                    description: 'Termasuk rokok, rokok kretek, cerutu, tembakau kunyah, atau vape',
                     type: 'radio',
                     condition: (answers) => answers.tobacco < 3,
                     options: [
@@ -286,7 +286,7 @@
                     title: 'Apakah ada bercak putih atau merah di mulut Anda?',
                     description: 'Leukoplakia (putih) atau eritroplakia (merah) bisa menjadi tanda pre-kanker',
                     type: 'radio',
-                    condition: (answers) => answers.oral_lesion === 0,
+                    condition: (answers) => answers.oral_lesion === 2,
                     options: [
                         { value: 0, label: 'Ada bercak putih dan merah', weight: 10 },
                         { value: 1, label: 'Ada bercak merah', weight: 8 },
@@ -298,7 +298,7 @@
                     id: 'swelling',
                     title: 'Apakah ada pembengkakan atau benjolan di mulut/leher?',
                     type: 'radio',
-                    condition: (answers) => answers.white_red_patch === 0,
+                    condition: (answers) => answers.white_red_patch === 2,
                     options: [
                         { value: 0, label: 'Ada keduanya', weight: 10 },
                         { value: 1, label: 'Ada pembengkakan di mulut', weight: 7 },
@@ -361,11 +361,11 @@
                 {
                     id: 'hpv',
                     title: 'Apakah Anda pernah didiagnosis dengan infeksi HPV*?',
-                    description: '*Human Papilloma Virus',
+                    description: '*Human Papilloma Virus, mis: Papilloma, Kondiloma, dll.',
                     type: 'radio',
                     options: [
                         { value: 0, label: 'Ya', weight: 3 },
-                        { value: 1, label: 'Tidak/Tidak tahu', weight: 0 }
+                        { value: 1, label: 'Tidak/ Tidak tahu', weight: 0 }
                     ]
                 }
             ],
@@ -386,19 +386,32 @@
                 {
                     id: 'lesion_location',
                     title: 'Lokasi lesi',
-                    condition: (answers) => answers.oral_lesion < 4,
+                    condition: (answers) => answers.clinical_lesion < 5,
+                    type: 'radio',
+                    options: [
+                        { value: 0, label: 'Dasar mulut', weight: 5 },
+                        { value: 1, label: 'Lidah lateral/ventral', weight: 4 },
+                        { value: 2, label: 'Palatum/ orofaring', weight: 4},
+                        { value: 3, label: 'Mukosa bukal/ labial', weight: 2},
+                        { value: 4, label: 'Gingiva', weight: 1 }
+                    ]
+                },
+                {
+                    id: 'size',
+                    title: 'Ukuran lesi',
+                    condition: (answers) => answers.clinical_lesion < 5 || answers.lesion_location < 5,
                     type: 'radio',
                     options: [
                         { value: 0, label: 'Tidak ada lesi', weight: 0 },
-                        { value: 1, label: 'Mukosa bukal/bibir', weight: 2 },
-                        { value: 2, label: 'Lidah lateral/ventral', weight: 4 },
-                        { value: 3, label: 'Dasar mulut', weight: 5 },
-                        { value: 4, label: 'Soft palate/orofaring', weight: 4 }
+                        { value: 1, label: '<1 cm', weight: 2 },
+                        { value: 2, label: '1-2 cm', weight: 4 },
+                        { value: 3, label: '>2 cm', weight: 6 }
                     ]
                 },
                 {
                     id: 'lesion_character',
                     title: 'Karakteristik lesi',
+                    condition: (answers) => answers.clinical_lesion < 5 || answers.lesion_location < 5 || size < 4,
                     type: 'checkbox',
                     options: [
                         { value: 'induration', label: 'Indurasi', weight: 5 },
@@ -413,20 +426,9 @@
                     title: 'Pemeriksaan kelenjar getah bening',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak teraba', weight: 0 },
+                        { value: 0, label: 'Limfadenopati fixed/matted', weight: 10 },
                         { value: 1, label: 'Limfadenopati mobile', weight: 5 },
-                        { value: 2, label: 'Limfadenopati fixed/matted', weight: 10 }
-                    ]
-                },
-                {
-                    id: 'size',
-                    title: 'Ukuran lesi (jika ada)',
-                    type: 'radio',
-                    options: [
-                        { value: 0, label: 'Tidak ada lesi', weight: 0 },
-                        { value: 1, label: '<1 cm', weight: 2 },
-                        { value: 2, label: '1-2 cm', weight: 4 },
-                        { value: 3, label: '>2 cm', weight: 6 }
+                        { value: 2, label: 'Tidak teraba', weight: 0 }
                     ]
                 },
                 {
@@ -479,8 +481,9 @@
                     title: 'Status imunokompromais',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
-                        { value: 1, label: 'HIV/AIDS atau imunosupresi', weight: 3 }
+                        { value: 0, label: 'Imunosupresi/ Ada penyakit sistemik', weight: 3 },
+                        { value: 1, label: 'HIV/ AIDS', weight: 2 },
+                        { value: 2, label: 'Tidak ada', weight: 0 }
                     ]
                 },
                 {
@@ -488,9 +491,9 @@
                     title: 'Riwayat kanker sebelumnya',
                     type: 'radio',
                     options: [
-                        { value: 0, label: 'Tidak ada', weight: 0 },
-                        { value: 1, label: 'Kanker mulut/kepala-leher sebelumnya', weight: 5 },
-                        { value: 2, label: 'Kanker jenis lain', weight: 2 }
+                        { value: 0, label: 'Kanker mulut/kepala-leher sebelumnya', weight: 5 },
+                        { value: 1, label: 'Kanker jenis lain', weight: 2 },
+                        { value: 2, label: 'Tidak ada', weight: 0 }
                     ]
                 }
             ]
