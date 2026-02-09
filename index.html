@@ -42,6 +42,7 @@
         .btn-secondary{background:#e2e8f0;color:#1e293b}
         .btn-secondary:hover{background:#cbd5e1}
         .btn-group{display:flex;gap:12px;margin-top:32px}
+        .btn-install{background-color:#0284c7}
         .hidden,.result-section{display:none}
         .result-section.active{display:block;animation:.5s fadeIn}
         .risk-indicator{padding:24px;border-radius:12px;text-align:center}
@@ -128,9 +129,10 @@
                 <div class="input-group">
                     <label>Foto Lesi Mulut*</label>
                     <input type="file" id="photoUpload" accept="image/*" capture="environment">
-                    <p style="font-size: 13px; color: #64748b; margin-top: 8px;">
-                        *Foto akan disimpan sebagai bahan pelatihan dan database bot AI skrining kanker mulut melalui gambaran lesi.<br>*Tidak wajib diisi.
-                    </p>
+                    <ul class="text-sm text-gray-500 mt-4">
+                    <li>Foto akan disimpan sebagai bahan pelatihan dan database bot AI skrining kanker mulut melalui gambaran lesi.</li>
+                    <li>Tidak wajib diisi.</li>
+                    </ul>
                     <div id="uploadStatus" style="margin-top: 8px; font-size: 14px;"></div>
                 </div>
                 
@@ -1161,7 +1163,7 @@
         // Install prompt
         let deferredPrompt;
         const installButton = document.createElement('button');
-        installButton.className = 'btn btn-primary';
+        installButton.className = 'btn btn-install';
         installButton.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none;';
         installButton.textContent = '📱 Install App';
         installButton.onclick = async () => {
