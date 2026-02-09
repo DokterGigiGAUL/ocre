@@ -42,7 +42,7 @@
         .btn-secondary{background:#e2e8f0;color:#1e293b}
         .btn-secondary:hover{background:#cbd5e1}
         .btn-group{display:flex;gap:12px;margin-top:32px}
-        .btn-install{background-color:#0284c7}
+        .btn-install{background-color:#0284c7; color: white;}
         .hidden,.result-section{display:none}
         .result-section.active{display:block;animation:.5s fadeIn}
         .risk-indicator{padding:24px;border-radius:12px;text-align:center}
@@ -1165,7 +1165,7 @@
         let deferredPrompt;
         const installButton = document.createElement('button');
         installButton.className = 'btn btn-install';
-        installButton.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none;';
+        installButton.style.cssText = 'position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none; ';
         installButton.textContent = '📱 Install App';
         installButton.onclick = async () => {
             if (deferredPrompt) {
