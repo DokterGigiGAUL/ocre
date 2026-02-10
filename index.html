@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-title" content="OCRE" />
     <link rel="manifest" href="/ocre/icons/site.webmanifest" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @theme { --font-sans: InterVariable, sans-serif; --font-sans--font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11'}
         body{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Inter,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:#075985;min-height:100vh;padding:20px}
@@ -832,12 +832,12 @@
                     html = `
                         <div class="recommendation border-2 border-white bg-emerald-100 text-black">
                             <h3>✓ Rekomendasi</h3>
-                            <ul>
-                                <li>• Hindari faktor risiko seperti tembakau dan alkohol</li>
-                                <li>• Konsumsi makanan sehat dan berserat seperti sayur dan buah</li>
-                                <li>• Lanjutkan kebiasaan baik menjaga kesehatan mulut</li>
-                                <li>• Periksakan gigi ke dokter gigi spesialis penyakit mulut minimal 6 bulan sekali</li>
-                                <li>• Lakukan pemeriksaan mandiri ulang berkala 3 bulan sekali</li>
+                            <ul class="list-disc">
+                                <li>Hindari faktor risiko seperti tembakau dan alkohol</li>
+                                <li>Konsumsi makanan sehat dan berserat seperti sayur dan buah</li>
+                                <li>Lanjutkan kebiasaan baik menjaga kesehatan mulut</li>
+                                <li>Periksakan gigi ke dokter gigi spesialis penyakit mulut minimal 6 bulan sekali</li>
+                                <li>Lakukan pemeriksaan mandiri ulang berkala 3 bulan sekali</li>
                             </ul>
                         </div>
                     `;
@@ -845,13 +845,13 @@
                     html = `
                         <div class="recommendation border-2 border-white bg-amber-100 text-black">
                             <h3>⚠️ Rekomendasi</h3>
-                            <ul>
-                                <li>• <strong>Konsultasikan dengan dokter gigi spesialis penyakit mulut dalam 1-2 minggu</strong></li>
-                                <li>• Hentikan atau coba kurangi kebiasaan merokok/tembakau jika ada</li>
-                                <li>• Kurangi atau hentikan konsumsi alkohol jika ada </li>
-                                <li>• Jaga kebersihan mulut dengan menyikat gigi 2x sehari</li>
-                                <li>• Perhatikan perubahan di mulut dan laporkan ke dokter</li>
-                                <li>• Lakukan skrining rutin ke dokter gigi spesialis penyakit mulut setiap 3-6 bulan</li>
+                            <ul class="list-disc">
+                                <li><strong>Konsultasikan dengan dokter gigi spesialis penyakit mulut dalam 1-2 minggu</strong></li>
+                                <li>Hentikan atau coba kurangi kebiasaan merokok/tembakau jika ada</li>
+                                <li>Kurangi atau hentikan konsumsi alkohol jika ada </li>
+                                <li>Jaga kebersihan mulut dengan menyikat gigi 2x sehari</li>
+                                <li>Perhatikan perubahan di mulut dan laporkan ke dokter</li>
+                                <li>Lakukan skrining rutin ke dokter gigi spesialis penyakit mulut setiap 3-6 bulan</li>
                             </ul>
                         </div>
                     `;
@@ -859,11 +859,11 @@
                     html = `
                         <div class="recommendation border-2 border-white bg-rose-100 text-black">
                             <h3>🚨 Rekomendasi </h3>
-                            <ul>
-                                <li>• <strong>SEGERA konsultasi ke dokter gigi spesialis penyakit mulut dalam 1-3 hari</strong></li>
-                                <li>• Bawa hasil skrining ini saat konsultasi</li>
-                                <li>• Hentikan SEGERA penggunaan tembakau dan alkohol</li>
-                                <li>• Jangan tunda pemeriksaan medis, termasuk saran biopsi jika diperlukan</li>
+                            <ul class="list-disc">
+                                <li><strong>SEGERA konsultasi ke dokter gigi spesialis penyakit mulut dalam 1-3 hari</strong></li>
+                                <li>Bawa hasil skrining ini saat konsultasi</li>
+                                <li>Hentikan SEGERA penggunaan tembakau dan alkohol</li>
+                                <li>Jangan tunda pemeriksaan medis, termasuk saran biopsi jika diperlukan</li>
                             </ul>
                         </div>
                         <div class="alert alert-warning bg-amber-200 border-2 text-black border-2 border-white">
@@ -877,11 +877,11 @@
                     html = `
                         <div class="recommendation border-2 border-white bg-emerald-100 text-black">
                             <h3>Tindakan Klinis</h3>
-                            <ul>
-                                <li>• Skrining ulang dalam 6-12 bulan</li>
-                                <li>• Edukasi pasien tentang faktor risiko</li>
-                                <li>• Dokumentasikan temuan klinis</li>
-                                <li>• Berikan konseling cessation jika ada paparan tembakau/alkohol</li>
+                            <ul class="list-disc">
+                                <li>Skrining ulang dalam 6-12 bulan</li>
+                                <li>Edukasi pasien tentang faktor risiko</li>
+                                <li>Dokumentasikan temuan klinis</li>
+                                <li>Berikan konseling cessation jika ada paparan tembakau/alkohol</li>
                             </ul>
                         </div>
                     `;
@@ -889,13 +889,13 @@
                     html = `
                         <div class="recommendation border-2 border-white bg-amber-100 text-black">
                             <h3>Tindakan Klinis</h3>
-                            <ul>
-                                <li>• <strong>Follow-up dalam 1-3 bulan</strong></li>
-                                <li>• Pertimbangkan foto klinis untuk monitoring</li>
-                                <li>• Brush biopsy atau toluidine blue test jika tersedia</li>
-                                <li>• Rujuk ke spesialis jika lesi progresif</li>
-                                <li>• Edukasi intensif tentang modifikasi faktor risiko</li>
-                                <li>• Dokumentasi detail lokasi, ukuran, dan karakteristik lesi</li>
+                            <ul class="list-disc">
+                                <li><strong>Follow-up dalam 1-3 bulan</strong></li>
+                                <li>Pertimbangkan foto klinis untuk monitoring</li>
+                                <li>Brush biopsy atau toluidine blue test jika tersedia</li>
+                                <li>Rujuk ke spesialis jika lesi progresif</li>
+                                <li>Edukasi intensif tentang modifikasi faktor risiko</li>
+                                <li>Dokumentasi detail lokasi, ukuran, dan karakteristik lesi</li>
                             </ul>
                         </div>
                     `;
@@ -903,13 +903,13 @@
                     html = `
                         <div class="recommendation border-2 border-white bg-rose-100 text-black">
                             <h3>🚨 Tindakan Klinis Mendesak</h3>
-                            <ul>
-                                <li>• <strong>RUJUKAN SEGERA ke Spesialis Penyakit Mulut/ Onkologi</strong></li>
-                                <li>• Biopsi incisional/excisional DIREKOMENDASIKAN</li>
-                                <li>• Pemeriksaan imaging (CT/MRI) jika ada indikasi</li>
-                                <li>• Follow-up maksimal 1-2 minggu</li>
-                                <li>• Dokumentasi lengkap dengan foto klinis</li>
-                                <li>• Informasikan pasien tentang urgency tanpa menimbulkan kepanikan berlebih</li>
+                            <ul class="list-disc">
+                                <li><strong>RUJUKAN SEGERA ke Spesialis Penyakit Mulut/ Onkologi</strong></li>
+                                <li>Biopsi incisional/excisional DIREKOMENDASIKAN</li>
+                                <li>Pemeriksaan imaging (CT/MRI) jika ada indikasi</li>
+                                <li>Follow-up maksimal 1-2 minggu</li>
+                                <li>Dokumentasi lengkap dengan foto klinis</li>
+                                <li>Informasikan pasien tentang urgency tanpa menimbulkan kepanikan berlebih</li>
                             </ul>
                         </div>
                         <div class="alert alert-warning bg-amber-200 border-2 text-black border-2 border-white">
